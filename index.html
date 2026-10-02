@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="lock">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ITZ FIZZ — Experience in Motion</title>
+<meta name="description" content="A scroll-driven hero experience built with GSAP and ScrollTrigger.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="preloader" aria-hidden="true">
+  <div class="pre-inner">
+    <span class="pre-logo">ITZ FIZZ</span>
+    <span class="pre-pct">000</span>
+  </div>
+  <div class="pre-bar"></div>
+</div>
+
+<header class="header">
+  <a class="logo" href="#top">ITZ FIZZ</a>
+  <nav class="nav" aria-label="Primary">
+    <a href="#about">About</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+  </nav>
+  <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="grid-bg"></div>
+  <a href="#about"><small>01 —</small>About</a>
+  <a href="#experience"><small>02 —</small>Experience</a>
+  <a href="#contact"><small>03 —</small>Contact</a>
+</div>
+<div class="progress" aria-hidden="true">
+  <span class="p-idx">01</span><span class="p-bar"><i></i></span><span class="p-total">03</span>
+</div>
+
+<main id="top">
+  <section class="hero" aria-label="Introduction">
+    <!-- Parallax layers: background (slowest) → decoration (mid) → product (fastest) -->
+    <div class="layer layer-bg"><div class="grid-bg"></div></div>
+    <div class="layer layer-deco" aria-hidden="true"><div class="deco-mouse">
+      <svg class="rings" viewBox="0 0 1000 1000" fill="none" stroke="currentColor">
+        <circle cx="500" cy="500" r="480"/><circle cx="500" cy="500" r="340" stroke-dasharray="2 8"/>
+        <circle cx="500" cy="500" r="200"/><path d="M500 0v1000M0 500h1000" opacity=".5"/>
+      </svg>
+      <span class="coord c1">01 / MOTION</span><span class="coord c2">24.592° / 73.712°</span><span class="coord c3 live">SCROLL 000</span>
+      <i class="mark m1"></i><i class="mark m2"></i><i class="mark m3"></i>
+    </div></div>
+    <div class="glow-mouse" aria-hidden="true"><div class="glow"></div></div>
+
+    <div class="hero-copy">
+      <p class="eyebrow"><i></i>Motion / Redefined</p>
+      <h1 class="headline" aria-label="Welcome Itz Fizz">
+        <span class="line line-1" data-split aria-hidden="true">WELCOME</span>
+        <span class="line line-2" data-split aria-hidden="true">ITZ FIZZ</span>
+      </h1>
+      <p class="tagline">Designed around movement. Built for the road ahead.</p>
+    </div>
+
+    <!-- Wrappers keep intro / mouse / scroll transforms separate:
+         .car-mouse (pointer tilt) > .car-scroll (scrubbed) > .car-float (intro) > .car (idle float).
+         To use a real photo, drop assets/car.webp or assets/car.png (transparent) — main.js swaps it in for .car-art. -->
+    <div class="stage">
+      <div class="car-mouse"><div class="car-scroll"><div class="car-float"><div class="car">
+        <svg class="car-art" viewBox="0 0 800 270" role="img" aria-label="Premium sports car in side profile">
+          <defs>
+            <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#626b77"/><stop offset=".3" stop-color="#262c34"/><stop offset="1" stop-color="#0b0d10"/></linearGradient>
+            <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9db3c6" stop-opacity=".7"/><stop offset="1" stop-color="#0b0e12"/></linearGradient>
+            <radialGradient id="rim"><stop offset="0" stop-color="#9aa1ab"/><stop offset="1" stop-color="#2a2f37"/></radialGradient>
+          <linearGradient id="rimlight" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".45" stop-color="#c8ff2e" stop-opacity=".35"/><stop offset="1" stop-color="#c8ff2e" stop-opacity="0"/></linearGradient>
+          </defs>
+          <path d="M30 190C28 160 52 148 100 142L226 134C262 104 318 80 400 76L512 76C578 80 632 104 668 132L726 140C762 146 774 164 772 190Z" fill="url(#body)"/>
+          <path d="M30 190C28 160 52 148 100 142L226 134C262 104 318 80 400 76L512 76C578 80 632 104 668 132L726 140C762 146 774 164 772 190Z" fill="none" stroke="url(#rimlight)" stroke-width="2.2"/><!-- rim light separates the car from the dark scene -->
+          <path d="M258 130C292 104 336 92 400 90L506 90C548 92 590 108 616 130Z" fill="url(#glass)"/>
+          <path d="M404 92L400 130" stroke="#07080a" stroke-width="4"/>
+          <path d="M250 130C288 100 340 80 400 76L512 76C580 80 636 106 672 132" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2"/>
+          <path d="M52 166C250 154 520 152 748 164" fill="none" stroke="#c8ff2e" stroke-width="1.5" opacity=".7"/>
+          <rect x="30" y="184" width="742" height="8" rx="4" fill="#050607"/>
+          <path d="M30 158L58 152V160L32 166Z" fill="#ff3b3b"/><path d="M734 150L770 158L768 164L728 158Z" fill="#f4fbff"/>
+          <circle cx="190" cy="192" r="54" fill="#07080a"/><circle cx="612" cy="192" r="54" fill="#07080a"/>
+          <g class="wheel"><circle cx="190" cy="192" r="46" fill="#0c0e11"/><circle cx="190" cy="192" r="32" fill="url(#rim)"/>
+        <path d="M190 162V222M164 177L216 207M164 207L216 177" stroke="#0c0e11" stroke-width="6"/><circle cx="190" cy="192" r="8" fill="#14171b"/></g>
+          <g class="wheel"><circle cx="612" cy="192" r="46" fill="#0c0e11"/><circle cx="612" cy="192" r="32" fill="url(#rim)"/>
+        <path d="M612 162V222M586 177L638 207M586 207L638 177" stroke="#0c0e11" stroke-width="6"/><circle cx="612" cy="192" r="8" fill="#14171b"/></g>
+        </svg>
+        <span class="car-beam" aria-hidden="true"></span><span class="car-shadow" aria-hidden="true"></span><span class="car-floor" aria-hidden="true"></span>
+      </div></div></div></div>
+    </div>
+
+    <h2 class="reveal" aria-label="Built for motion">
+      <span class="rl"><span>BUILT</span></span><span class="rl"><span>FOR</span></span><span class="rl"><span>MOTION</span></span>
+    </h2>
+
+    <ul class="stats">
+      <li class="stat"><div class="stat-in"><span class="idx">01</span><b class="num" data-value="85">0%</b><h3>Performance</h3><p>Tuned for instant response.</p></div></li>
+      <li class="stat"><div class="stat-in"><span class="idx">02</span><b class="num" data-value="92">0%</b><h3>Efficiency</h3><p>Less waste, more road.</p></div></li>
+      <li class="stat"><div class="stat-in"><span class="idx">03</span><b class="num" data-value="78">0%</b><h3>Experience</h3><p>Every detail, felt at speed.</p></div></li>
+    </ul>
+    <p class="demo-note">Demo metrics — fictional, for presentation only</p>
+    <div class="scroll-cue" aria-hidden="true"><span>Scroll to explore ↓</span><span class="cue-line"><i></i></span></div>
+  </section>
+
+  <section class="outro">
+    <div class="outro-head" id="about">
+      <h2>BUILT FOR<br>MOTION.</h2>
+      <p>ITZ FIZZ is a fictional automotive concept: a study in how scroll can steer motion, light and depth.</p>
+    </div>
+    <div class="features" id="experience">
+      <article class="feature"><span class="f-idx">01</span><h3>Precision</h3><p>Every movement is mapped to scroll position, frame for frame.</p></article>
+      <article class="feature"><span class="f-idx">02</span><h3>Performance</h3><p>Transform and opacity only, driven by ScrollTrigger.</p></article>
+      <article class="feature"><span class="f-idx">03</span><h3>Experience</h3><p>Smooth, reversible and responsive from phone to widescreen.</p></article>
+    </div>
+    <footer class="outro-foot" id="contact">
+      <p>Let’s make it move.</p><a href="mailto:hello@itzfizz.example">hello@itzfizz.example</a>
+    </footer>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
